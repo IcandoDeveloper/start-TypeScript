@@ -44,3 +44,15 @@ const playerPotato: Player = {
 const playerMaker = (name: string): Player => ({ name });
 const seokil = playerMaker("seokil");
 seokil.age = 12;
+
+// //readonly기능
+// type Age = number;
+// type Name = string
+// type Player2 = {
+//   readonly name2:Name
+//   age?: Age
+// };
+// const playerMaker2 = (name: string): Player => ({ name });
+// const seokil2 = playerMaker2("seokil2");
+// seokil2.age = 12;
+// seokil2.name = "yoon"
