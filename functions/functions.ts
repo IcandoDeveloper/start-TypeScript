@@ -10,4 +10,7 @@ type Add2 = {
   (c: number, d: string): number;
 };
 
-const add2: Add2 = (c, d) => c + d;
+const add2: Add2 = (c ,d) => {
+  if(typeof d ==="string")return c
+  return c + d
+}
