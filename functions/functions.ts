@@ -56,11 +56,13 @@ const add3 = (Add3 = (a1, b1, c1?: number) => {
 //아래 concrete type들을 generic타입으로 바꿀거임
 //generic이란 타입의placeholder 와 같은거다.
 //어떤타입이 들어갈지 모를 때 사용
+//아래 첫번째줄이  <>이 부등호 사이에는 아무단어나 쓸 수있음 그뒤에 같은 단어로 맞춰줘야함
+
 type SuperPrint = {
-  (arr: number[]): void;
-  (arr: boolean[]): void;
-  (arr: string[]): void;
-  (arr: (number | boolean)[]): void;
+  <TypePlaceholder>(arr: TypePlaceholder[]): void;
+  // (arr: boolean[]): void;
+  // (arr: string[]): void;
+  // (arr: (number | boolean)[]): void;
 };
 
 const superPrint: SuperPrint = (arr) => {
