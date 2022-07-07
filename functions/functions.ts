@@ -88,3 +88,17 @@ const d1 = superPrint2([1, 2, true, false], []);
 // d1.toUpperCase()
 //d1이 오류가 나는 이유는 0번째 배열이 number인데 toUpperCase라는 문자열을 취급하는 메서드를 사용했기 때문
 //따라서 위에 any 대신에 Generic을 알려줘서 사용해야함
+
+//Using generic detailed
+type Player<E> = {
+  name: string;
+  extraInfo: E;
+};
+type SeokilPlayer = Player<{ favFood: string }>;
+
+const seokil: SeokilPlayer = {
+  name: "seokil",
+  extraInfo: {
+    favFood: "Kimchi",
+  },
+};
