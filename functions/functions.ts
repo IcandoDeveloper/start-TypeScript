@@ -73,3 +73,18 @@ superPrint([1, 2, 3, 4]);
 superPrint([true, false, true]);
 superPrint(["a", "b", "c"]);
 superPrint([1, 2, true, false]);
+
+//Using Generic
+//any 대신
+// type SuperPrint2 = (a1 : any[]) => any
+type SuperPrint2 = <T, M>(a1: T[], b1: M) => T;
+
+const superPrint2: SuperPrint2 = (a1) => a1[0];
+
+const a1 = superPrint2([1, 2, 3, 4], "x");
+const b1 = superPrint2([true, false, true], 1);
+const c1 = superPrint2(["a", "b", "c"], false);
+const d1 = superPrint2([1, 2, true, false], []);
+// d1.toUpperCase()
+//d1이 오류가 나는 이유는 0번째 배열이 number인데 toUpperCase라는 문자열을 취급하는 메서드를 사용했기 때문
+//따라서 위에 any 대신에 Generic을 알려줘서 사용해야함
