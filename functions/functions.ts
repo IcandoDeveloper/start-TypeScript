@@ -102,3 +102,13 @@ const seokil: SeokilPlayer = {
     favFood: "Kimchi",
   },
 };
+
+type E = Array<number>;
+
+let e: E = [1, 2, 3, 4];
+
+function printAllNumbers(arr: Array<number>) {}
+
+//Reactjs + TypeScript
+//아래처럼 작성한다면 타입스크립트에서 타입을 인지할 수 있음
+useState<number>();
