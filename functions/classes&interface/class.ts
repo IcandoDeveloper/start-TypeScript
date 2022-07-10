@@ -44,3 +44,40 @@ class Player2 extends User {
 }
 const seokil = new Player2("seokil", "yoon", "석일");
 seokil.getFullName();
+
+//복습
+type Words = {
+  [key: string]: string;
+};
+//아래처럼 작성하게되면  constructor가 words를 지정해줌 => constructor(words) 이런식으로 나옴
+// class Dict {
+//   constructor (
+//     private words : Words
+//   ) {}
+// }
+
+//위에 대신 아래처럼 작성해야 constructor() 이런식으로 작성됨
+class Dict {
+  private words: Words;
+  constructor() {
+    this.words = {};
+  }
+  add(word: Word) {
+    if (this.words[word.term] === undefined) {
+    }
+    this.words[word.term] = word.def;
+  }
+  def(term: string) {
+    return this.words[term];
+  }
+}
+
+class Word {
+  constructor(public term: string, public def: string) {}
+}
+
+const kimchi = new Word("kincji", "한국의 음식");
+
+const dict = new Dict();
+dict.add(kimchi);
+dict.def("kimchi");
