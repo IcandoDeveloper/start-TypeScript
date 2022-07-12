@@ -70,14 +70,24 @@ class Dict {
   def(term: string) {
     return this.words[term];
   }
+  //여기서의 static 메서드는 자바스크립트랑 다름
+  static hello() {
+    return "hello";
+  }
 }
 
 class Word {
-  constructor(public term: string, public def: string) {}
+  constructor(
+    //private 나 protect를 쓰지 않고도 readonly처리를 통해 값을 임의로 수정할수 없도록 만들 수 도있음
+    public readonly term: string,
+    public readonly def: string
+  ) {}
 }
 
-const kimchi = new Word("kincji", "한국의 음식");
+const kimchi = new Word("kinci", "한국의 음식");
 
 const dict = new Dict();
 dict.add(kimchi);
 dict.def("kimchi");
+
+Dict.hello();
